@@ -1,0 +1,28 @@
+{
+  "name": "rms",
+  "version": "1.0.0",
+  "description": "Robust Messaging Services",
+  "main": "app.js",
+  "dependencies": {
+    "zmq": "^2.15.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bruno-argenta/node-robust-messaging-services.git"
+  },
+  "keywords": [
+    "Robust",
+    "Messaging",
+    "Services"
+  ],
+  "author": "Bruno Argenta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bruno-argenta/node-robust-messaging-services/issues"
+  },
+  "homepage": "https://github.com/bruno-argenta/node-robust-messaging-services#readme"
+}
