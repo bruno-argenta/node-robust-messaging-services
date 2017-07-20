@@ -3,15 +3,22 @@ const
     fs=require('fs'),
     zmq=require('zmq'),
     vik_publisher = zmq.socket('pub'),
-    filename = process.argv[2];
+    filename = "/test.txt"
 
 
 fs.watch(filename,function(){
-    vik_publisher.send(JSON.stringify({
-        type:'changed',
-        file: filename,
-        timestamp: Date.now()
-    }))
+    fs.readFile(filename, "utf8",function(err,content){
+        if (!err){
+            console.log('Someone change the file, i\'ll notify the other vikings')
+            vik_publisher.send(JSON.stringify({
+                type:'changed',
+                file: filename,
+                timestamp: Date.now(),
+                content: content,
+                })
+            )
+        }        
+    })    
 })
 
 
